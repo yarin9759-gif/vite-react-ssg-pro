@@ -16,11 +16,13 @@ const Layout: FC = () => {
   const content = (
     <>
       <SEOTitle />
-      <main data-beasties-container className="min-h-screen bg-black selection:bg-blue-500/30 selection:text-blue-200 font-sans text-white">
+      <div data-beasties-container className="min-h-screen flex flex-col font-sans">
         <Navbar />
-        <Outlet />
+        <main className="flex-1">
+          <Outlet />
+        </main>
         <Footer />
-      </main>
+      </div>
     </>
   );
 

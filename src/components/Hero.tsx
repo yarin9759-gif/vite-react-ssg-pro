@@ -1,88 +1,45 @@
-﻿import { m as motion } from 'framer-motion';
-import { Sparkles, Zap, Star } from 'lucide-react';
+import { Link } from 'react-router';
+import { ArrowLeft } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { whatsappLink } from '@/data/site';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20">
-      {/* Floating Elements */}
-      <motion.div
-        animate={{ 
-          y: [0, -20, 0],
-          rotate: [0, 5, 0]
-        }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-32 right-20 w-20 h-20 bg-linear-to-br from-yellow-400 to-orange-500 rounded-2xl opacity-20 blur-xl"
-      />
-      <motion.div
-        animate={{ 
-          y: [0, 20, 0],
-          rotate: [0, -5, 0]
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-40 left-20 w-32 h-32 bg-linear-to-br from-blue-400 to-purple-500 rounded-full opacity-20 blur-xl"
-      />
-      
-      <div className="container mx-auto px-6 z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-panel mb-8"
-          >
-            <Sparkles className="w-4 h-4 text-purple-600" />
-            <span className="text-sm font-medium text-gray-700">Vite + React + TypeScript</span>
-          </motion.div>
+    <section className="relative overflow-hidden bg-stone-900 text-white">
+      <div className="absolute inset-0 hero-pattern opacity-40" aria-hidden="true" />
+      <div className="absolute inset-y-0 start-0 w-1/2 bg-linear-to-l from-transparent to-amber-500/15" aria-hidden="true" />
 
-          <motion.h1
-            className="text-6xl lg:text-8xl font-black mb-6 leading-tight"
-          >
-            <span className="gradient-text">Build Amazing</span>
+      <div className="relative container mx-auto px-4 py-20 md:py-28">
+        <div className="max-w-2xl">
+          <p className="inline-block px-3 py-1 mb-6 rounded-full bg-amber-500/15 text-amber-400 text-sm font-medium">
+            משלוחים לכל האזור · ייעוץ מקצועי חינם
+          </p>
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-balance">
+            כל מה שצריך לבנייה,
             <br />
-            <span className="text-gray-100">Web Apps Fast</span>
-          </motion.h1>
-
-          <motion.p
-            className="text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed"
-          >
-            A modern starter template with everything you need: beautiful animations, icons, routing, and more. Start building in seconds.
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col items-center gap-4 mb-16"
-          >
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a 
-                  href="https://payhip.com/b/OaDoU" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group px-8 py-4 bg-linear-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2"
-                >
-                  Get Pro Version
-                  <Sparkles className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Features */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
-          >
-            {[
-              { icon: Zap, title: 'Lightning Fast', desc: 'Built with Vite for instant HMR' },
-              { icon: Sparkles, title: 'Beautiful UI', desc: 'Smooth animations with Framer Motion' },
-              { icon: Star, title: 'Modern Stack', desc: 'React 19 + TypeScript + Tailwind' }
-            ].map((feature, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -5 }}
-                className="glass-panel p-6 rounded-2xl text-center"
-              >
-                <feature.icon className="w-8 h-8 mx-auto mb-3 text-purple-600" />
-                <h2 className="font-bold text-gray-800 mb-2">{feature.title}</h2>
-                <p className="text-sm text-gray-600">{feature.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+            <span className="text-amber-400">צביעה ואיטום</span> — במקום אחד
+          </h1>
+          <p className="text-lg md:text-xl text-stone-300 mb-10 leading-relaxed">
+            חומרי בניין, צבעים ומוצרי איטום של המותגים המובילים, במחירים הוגנים לקבלנים ולפרטיים.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link
+              to="/products"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-amber-500 text-stone-900 font-bold hover:bg-amber-400 transition-colors"
+            >
+              לקטלוג המוצרים
+              <ArrowLeft className="w-5 h-5" />
+            </Link>
+            <a
+              href={whatsappLink('שלום, אשמח לקבל הצעת מחיר')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-stone-600 font-bold hover:bg-stone-800 transition-colors"
+            >
+              <FaWhatsapp className="w-5 h-5 text-green-400" />
+              הצעת מחיר בוואטסאפ
+            </a>
+          </div>
         </div>
       </div>
     </section>

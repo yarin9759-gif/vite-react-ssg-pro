@@ -1,41 +1,39 @@
+import { BadgeCheck, HardHat, Truck } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
-import { m as motion } from 'framer-motion';
-import { Code, Zap, Package } from 'lucide-react';
+import { site } from '@/data/site';
+
+const values = [
+  { icon: HardHat, title: 'ניסיון מהשטח', text: 'אנחנו מכירים את העבודה באתר ויודעים להמליץ על הפתרון הנכון.' },
+  { icon: BadgeCheck, title: 'איכות ואמינות', text: 'עובדים רק עם ספקים ומותגים שאנחנו סומכים עליהם.' },
+  { icon: Truck, title: 'שירות עד הבית', text: 'משלוחים מהירים לאתרי בנייה, לקבלנים וללקוחות פרטיים.' },
+];
 
 export default function AboutPage() {
-  const features = [
-    { icon: Code, title: 'Clean Code', description: 'TypeScript + ESLint configured' },
-    { icon: Zap, title: 'Fast Dev', description: 'Vite HMR for instant updates' },
-    { icon: Package, title: 'Ready to Ship', description: 'Build & deploy out of the box' }
-  ];
-
   return (
-    <main className="min-h-screen bg-[#020204] font-sans text-white">
-      <PageHeader title="About This Template" description="A production-ready Vite + React 19 template with SSG, achieving 100/100 PageSpeed scores." />
+    <div>
+      <PageHeader title={`אודות ${site.name}`} description={site.tagline} />
 
-      <section className="py-16 container mx-auto px-6">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-gray-400 mb-8">
-            This repository contains a reusable Vite + React template with minimal pages and components to get you started quickly.
+      <section className="container mx-auto px-4 py-12 max-w-3xl">
+        <div className="space-y-4 text-lg text-stone-700 leading-relaxed">
+          <p>
+            {site.name} הוא מרכז לחומרי בניין, צבעים ומוצרי איטום, המשרת קבלנים, בעלי מקצוע ולקוחות פרטיים.
+            אצלנו תמצאו את כל מה שצריך לפרויקט — מהיסודות ועד שכבת הצבע האחרונה.
           </p>
+          <p>
+            הצוות שלנו ישמח לייעץ בבחירת החומרים, לחשב כמויות ולהתאים פתרון לכל תקציב.
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            {features.map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="p-6 bg-white/5 rounded-lg border border-white/10"
-              >
-                <feature.icon className="w-8 h-8 text-blue-400 mb-3" />
-                <h3 className="font-bold mb-2">{feature.title}</h3>
-                <p className="text-sm text-gray-400">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid gap-6 sm:grid-cols-3 mt-12">
+          {values.map((value) => (
+            <div key={value.title} className="bg-white rounded-xl border border-stone-200 p-6">
+              <value.icon className="w-8 h-8 text-amber-600 mb-3" />
+              <h2 className="font-bold text-stone-900 mb-2">{value.title}</h2>
+              <p className="text-sm text-stone-600">{value.text}</p>
+            </div>
+          ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

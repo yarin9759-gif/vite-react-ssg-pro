@@ -181,11 +181,7 @@ function generateSchemaMarkup(routePath: string): string {
             "url": globalConfig.organization.url,
             "logo": `${globalConfig.domain}${globalConfig.logo}`,
             "description": globalConfig.organization.description,
-            "sameAs": [
-                globalConfig.social.twitter,
-                globalConfig.social.github,
-                globalConfig.social.linkedin
-            ],
+            "sameAs": Object.values(globalConfig.social ?? {}),
             "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": globalConfig.contact.type,

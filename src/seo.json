@@ -1,87 +1,113 @@
 {
   "_global": {
-    "siteName": "Vite React SSG Pro",
+    "siteName": "בונים פלוס",
     "domain": "https://vite-react-ssg-pro.pages.dev",
-    "locale": "en_US",
+    "locale": "he_IL",
     "defaultRobots": "index, follow",
     "defaultImage": "/images/og/og-default.webp",
     "twitterCard": "summary_large_image",
     "logo": "/images/logo.webp",
     "social": {
-      "twitter": "https://x.com/example",
-      "github": "https://github.com/example",
-      "linkedin": "https://linkedin.com/company/example",
-      "youtube": "https://youtube.com/@example"
+      "facebook": "https://facebook.com/example",
+      "instagram": "https://instagram.com/example"
     },
     "contact": {
-      "email": "contact@vite-react-ssg-pro.pages.dev",
-      "type": "Customer Support"
+      "email": "info@example.co.il",
+      "type": "Customer Service"
     },
     "organization": {
-      "name": "Vite React SSG Pro",
-      "description": "Production-ready Vite + React 19 template with SSG, 100/100 PageSpeed scores.",
+      "name": "בונים פלוס",
+      "description": "חומרי בניין, צבעים ומוצרי איטום לקבלנים וללקוחות פרטיים.",
       "foundingDate": "2025",
       "url": "https://vite-react-ssg-pro.pages.dev"
-    },
-    "software": {
-      "name": "Vite React SSG Pro",
-      "price": 0,
-      "category": "WebApplication",
-      "operatingSystem": "Web, iOS, Android",
-      "priceCurrency": "USD"
     }
   },
   "/": {
-    "title": "Vite React SSG Pro42 - React 19 Template",
-    "description": "Production-ready Vite + React 19 template with SSG, achieving 100/100 PageSpeed scores out of the box.",
-    "keywords": "vite,react,ssg,template,react19,typescript,tailwind",
+    "title": "בונים פלוס – חומרי בניין, צבעים ואיטום",
+    "description": "חומרי בניין, צבעים ומוצרי איטום במחירים הוגנים. משלוחים לאתרי בנייה ולבתים, ייעוץ מקצועי והזמנה מהירה בוואטסאפ.",
+    "keywords": "חומרי בניין,צבע,איטום,מלט,איטום גגות,צבע לקירות,דבק קרמיקה",
     "canonical": "https://vite-react-ssg-pro.pages.dev/",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
-    "ogImageAlt": "Vite React SSG Pro - React 19 Template",
+    "ogImageAlt": "בונים פלוס – חומרי בניין, צבעים ואיטום",
     "ogImageWidth": 1200,
     "ogImageHeight": 630,
     "twitterCard": "summary_large_image",
     "sitemap": {
-      "changefreq": "daily",
-      "priority": 1.0
+      "changefreq": "weekly",
+      "priority": 1
     },
     "schema": {
       "organization": true,
-      "website": true,
+      "website": false,
+      "breadcrumb": false
+    }
+  },
+  "/products": {
+    "title": "קטלוג מוצרים – בונים פלוס",
+    "description": "מלט, טיט, בלוקים, צבעי פנים וחוץ, איטום גגות וחדרים רטובים, כלי עבודה ועוד.",
+    "keywords": "קטלוג חומרי בניין,מחירון צבע,מוצרי איטום,כלי עבודה",
+    "canonical": "https://vite-react-ssg-pro.pages.dev/products",
+    "ogType": "website",
+    "ogImage": "/images/og/og-products.webp",
+    "ogImageAlt": "קטלוג מוצרים – בונים פלוס",
+    "ogImageWidth": 1200,
+    "ogImageHeight": 630,
+    "twitterCard": "summary_large_image",
+    "sitemap": {
+      "changefreq": "weekly",
+      "priority": 0.9
+    },
+    "schema": {
+      "breadcrumb": true
+    }
+  },
+  "/cart": {
+    "title": "סל קניות – בונים פלוס",
+    "description": "סל הקניות שלך. שליחת הזמנה מהירה בוואטסאפ.",
+    "keywords": "סל קניות",
+    "canonical": "https://vite-react-ssg-pro.pages.dev/cart",
+    "ogType": "website",
+    "ogImage": "/images/og/og-home.webp",
+    "ogImageAlt": "סל קניות – בונים פלוס",
+    "ogImageWidth": 1200,
+    "ogImageHeight": 630,
+    "twitterCard": "summary_large_image",
+    "sitemap": {
+      "changefreq": "yearly",
+      "priority": 0.1
+    },
+    "schema": {
       "breadcrumb": false
     }
   },
   "/about": {
-    "title": "About43 - Vite React SSG Pro",
-    "description": "About this production-ready React 19 template and how to use it.",
-    "keywords": "vite,react,template,ssg,about",
+    "title": "אודות – בונים פלוס",
+    "description": "מרכז לחומרי בניין, צבעים ואיטום עם ייעוץ מקצועי ומשלוחים לכל האזור.",
+    "keywords": "אודות,חנות חומרי בניין",
     "canonical": "https://vite-react-ssg-pro.pages.dev/about",
-    "ogType": "article",
+    "ogType": "website",
     "ogImage": "/images/og/og-about.webp",
-    "ogImageAlt": "About - Vite React SSG Pro",
+    "ogImageAlt": "אודות – בונים פלוס",
     "ogImageWidth": 1200,
     "ogImageHeight": 630,
     "twitterCard": "summary_large_image",
     "sitemap": {
       "changefreq": "monthly",
-      "priority": 0.8
+      "priority": 0.6
     },
     "schema": {
-      "organization": false,
-      "website": false,
-      "breadcrumb": true,
-      "article": true
+      "breadcrumb": true
     }
   },
-  "/suspense-example": {
-    "title": "Suspense Example - Vite React SSG Pro",
-    "description": "An example page demonstrating React Suspense with loading fallback states and async data.",
-    "keywords": "react,suspense,async,example,template",
-    "canonical": "https://vite-react-ssg-pro.pages.dev/suspense-example",
-    "ogType": "article",
-    "ogImage": "/images/og/og-suspense.webp",
-    "ogImageAlt": "Suspense Example - Vite React SSG Pro",
+  "/contact": {
+    "title": "צור קשר – בונים פלוס",
+    "description": "טלפון, וואטסאפ, כתובת ושעות פעילות. נשמח לתת הצעת מחיר וייעוץ.",
+    "keywords": "צור קשר,הצעת מחיר חומרי בניין",
+    "canonical": "https://vite-react-ssg-pro.pages.dev/contact",
+    "ogType": "website",
+    "ogImage": "/images/og/og-contact.webp",
+    "ogImageAlt": "צור קשר – בונים פלוס",
     "ogImageWidth": 1200,
     "ogImageHeight": 630,
     "twitterCard": "summary_large_image",
@@ -90,8 +116,6 @@
       "priority": 0.7
     },
     "schema": {
-      "organization": false,
-      "website": false,
       "breadcrumb": true
     }
   }
