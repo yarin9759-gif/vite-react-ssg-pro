@@ -13,6 +13,9 @@ export default function Footer() {
           <p className="text-sm leading-relaxed">
             {site.tagline}. ייעוץ מקצועי, מחירים הוגנים ומשלוחים לאתרי בנייה ולבתים פרטיים.
           </p>
+          <p className="text-sm mt-3">
+            בעלים: <span className="font-bold text-white">{site.owner}</span>
+          </p>
         </div>
 
         <div>
@@ -40,7 +43,7 @@ export default function Footer() {
             <li>
               <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-amber-400">
                 <FaWhatsapp className="w-4 h-4 shrink-0" />
-                וואטסאפ
+                וואטסאפ <span dir="ltr">{site.phone}</span>
               </a>
             </li>
             <li>

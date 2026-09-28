@@ -9,13 +9,14 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="flex flex-col bg-white rounded-xl border border-stone-200 overflow-hidden hover:shadow-lg transition-shadow">
-      {product.image ? (
-        <img src={product.image} alt={product.name} loading="lazy" className="aspect-4/3 w-full object-cover" />
-      ) : (
-        <div className={`aspect-4/3 flex items-center justify-center ${category.tint}`}>
-          <category.icon className="w-14 h-14 opacity-70" aria-hidden="true" />
-        </div>
-      )}
+      <img
+        src={product.image ?? category.image}
+        alt={product.name}
+        loading="lazy"
+        width={800}
+        height={600}
+        className="aspect-4/3 w-full object-cover"
+      />
 
       <div className="flex flex-col flex-1 p-4">
         <p className="text-xs font-medium text-stone-500 mb-1">{category.name}</p>

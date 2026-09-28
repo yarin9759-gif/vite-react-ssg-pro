@@ -1,9 +1,10 @@
 import { Link } from 'react-router';
 import { ArrowLeft, BadgeCheck, Phone, ShieldCheck, Truck } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import Hero from '@/components/Hero';
 import ProductCard from '@/components/ProductCard';
 import { categories, products } from '@/data/products';
-import { site } from '@/data/site';
+import { site, whatsappLink } from '@/data/site';
 
 const benefits = [
   { icon: Truck, title: 'משלוחים מהירים', text: 'עד אתר הבנייה או עד הבית, כולל מנוף לפי הצורך' },
@@ -21,18 +22,30 @@ export default function Home() {
 
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-8">קטגוריות</h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
           {categories.map((category) => (
             <Link
               key={category.id}
               to={`/products?cat=${category.id}`}
-              className="group bg-white rounded-xl border border-stone-200 p-5 hover:border-amber-400 hover:shadow-md transition-all"
+              className="group bg-white rounded-xl border border-stone-200 overflow-hidden hover:border-amber-400 hover:shadow-md transition-all"
             >
-              <span className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${category.tint}`}>
-                <category.icon className="w-6 h-6" />
-              </span>
-              <h3 className="font-bold text-lg text-stone-900 mb-1 group-hover:text-amber-600">{category.name}</h3>
-              <p className="text-sm text-stone-600">{category.description}</p>
+              <div className="relative aspect-4/3 overflow-hidden">
+                <img
+                  src={category.image}
+                  alt={category.name}
+                  loading="lazy"
+                  width={800}
+                  height={600}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <span className={`absolute bottom-3 start-3 w-10 h-10 rounded-lg flex items-center justify-center shadow ${category.tint}`}>
+                  <category.icon className="w-5 h-5" />
+                </span>
+              </div>
+              <div className="p-5">
+                <h3 className="font-bold text-lg text-stone-900 mb-1 group-hover:text-amber-600">{category.name}</h3>
+                <p className="text-sm text-stone-600">{category.description}</p>
+              </div>
             </Link>
           ))}
         </div>
@@ -73,15 +86,26 @@ export default function Home() {
         <div className="rounded-2xl bg-amber-500 text-stone-900 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-2">קבלן? מתכננים פרויקט גדול?</h2>
-            <p className="text-lg">דברו איתנו לקבלת הצעת מחיר מותאמת לכמויות.</p>
+            <p className="text-lg">דברו עם {site.owner} לקבלת הצעת מחיר מותאמת לכמויות.</p>
           </div>
-          <a
-            href={`tel:${site.phone}`}
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-stone-900 text-white font-bold hover:bg-stone-800 transition-colors"
-          >
-            <Phone className="w-5 h-5" />
-            <span dir="ltr">{site.phone}</span>
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href={`tel:${site.phone}`}
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-stone-900 text-white font-bold hover:bg-stone-800 transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+              <span dir="ltr">{site.phone}</span>
+            </a>
+            <a
+              href={whatsappLink(`שלום ${site.owner}, אשמח לקבל הצעת מחיר`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-green-600 text-white font-bold hover:bg-green-700 transition-colors"
+            >
+              <FaWhatsapp className="w-5 h-5" />
+              וואטסאפ
+            </a>
+          </div>
         </div>
       </section>
     </div>

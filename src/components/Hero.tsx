@@ -1,13 +1,21 @@
 import { Link } from 'react-router';
 import { ArrowLeft } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { whatsappLink } from '@/data/site';
+import { site, whatsappLink } from '@/data/site';
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-stone-900 text-white">
-      <div className="absolute inset-0 hero-pattern opacity-40" aria-hidden="true" />
-      <div className="absolute inset-y-0 start-0 w-1/2 bg-linear-to-l from-transparent to-amber-500/15" aria-hidden="true" />
+      <img
+        src="/images/site/hero.webp"
+        alt=""
+        width={1600}
+        height={900}
+        fetchPriority="high"
+        className="absolute inset-0 w-full h-full object-cover"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-linear-to-l from-stone-950/95 via-stone-900/80 to-stone-900/40" aria-hidden="true" />
 
       <div className="relative container mx-auto px-4 py-20 md:py-28">
         <div className="max-w-2xl">
@@ -40,6 +48,12 @@ export default function Hero() {
               הצעת מחיר בוואטסאפ
             </a>
           </div>
+          <p className="mt-8 text-stone-300">
+            {site.owner} ·{' '}
+            <a href={`tel:${site.phone}`} dir="ltr" className="font-bold text-white hover:text-amber-400">
+              {site.phone}
+            </a>
+          </p>
         </div>
       </div>
     </section>

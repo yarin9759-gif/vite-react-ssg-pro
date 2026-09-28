@@ -1,13 +1,15 @@
-import { BrickWall, Droplets, Hammer, PaintRoller, type LucideIcon } from 'lucide-react';
+import { BrickWall, ClipboardList, Droplets, Hammer, House, PaintRoller, type LucideIcon } from 'lucide-react';
 
 // To add a new category: add its id to CategoryId, an entry to `categories`, and products that use it.
-export type CategoryId = 'building' | 'paint' | 'sealing' | 'tools';
+export type CategoryId = 'building' | 'paint' | 'sealing' | 'tools' | 'project-management' | 'villas';
 
 export interface Category {
   id: CategoryId;
   name: string;
   description: string;
   icon: LucideIcon;
+  // Photo under /public shown on category cards and as the product fallback image
+  image: string;
   // Full Tailwind class strings (kept literal so Tailwind picks them up)
   tint: string;
 }
@@ -27,6 +29,7 @@ export interface Product {
 export const categories: Category[] = [
   {
     id: 'building',
+    image: '/images/categories/building.webp',
     name: 'חומרי בניין',
     description: 'מלט, טיט, בלוקים, דבקים וטיח',
     icon: BrickWall,
@@ -34,6 +37,7 @@ export const categories: Category[] = [
   },
   {
     id: 'paint',
+    image: '/images/categories/paint.webp',
     name: 'צבעים',
     description: 'צבעי פנים וחוץ, יסוד ושפכטל',
     icon: PaintRoller,
@@ -41,6 +45,7 @@ export const categories: Category[] = [
   },
   {
     id: 'sealing',
+    image: '/images/categories/sealing.webp',
     name: 'איטום',
     description: 'איטום גגות, חדרים רטובים ויריעות',
     icon: Droplets,
@@ -48,10 +53,27 @@ export const categories: Category[] = [
   },
   {
     id: 'tools',
+    image: '/images/categories/tools.webp',
     name: 'כלי עבודה ואביזרים',
     description: 'כלים ואביזרים לבנאי ולצבעי',
     icon: Hammer,
     tint: 'bg-stone-200 text-stone-700',
+  },
+  {
+    id: 'project-management',
+    image: '/images/categories/project-management.webp',
+    name: 'מנהל פרויקטים',
+    description: 'ליווי, תיאום וניהול עבודות הבנייה',
+    icon: ClipboardList,
+    tint: 'bg-violet-100 text-violet-700',
+  },
+  {
+    id: 'villas',
+    image: '/images/categories/villas.webp',
+    name: 'וילות',
+    description: 'פתרונות בנייה וגמר לפרויקטים של וילות',
+    icon: House,
+    tint: 'bg-emerald-100 text-emerald-700',
   },
 ];
 
@@ -86,6 +108,14 @@ export const products: Product[] = [
   { id: 'brush-3in', name: 'מברשת צבע 3 אינץ׳', category: 'tools', description: 'מברשת סיבים לצבעים על בסיס מים', unit: 'יחידה', price: 18 },
   { id: 'level-60', name: 'פלס אלומיניום 60 ס״מ', category: 'tools', description: 'פלס מדויק עם 3 בועות', unit: 'יחידה', price: 45 },
   { id: 'trowel', name: 'כף בנאים', category: 'tools', description: 'כף פלדה עם ידית עץ', unit: 'יחידה', price: 25 },
+
+  // Project management
+  { id: 'project-consultation', name: 'פגישת ייעוץ וניהול פרויקט', category: 'project-management', description: 'פגישת אפיון, תכנון ראשוני ובניית לוח זמנים', unit: 'פגישה', price: 750 },
+  { id: 'project-management-package', name: 'ליווי מנהל פרויקט', category: 'project-management', description: 'תיאום בעלי מקצוע, ספקים ובקרת ביצוע באתר', unit: 'חודש', price: 6500 },
+
+  // Villas
+  { id: 'villa-planning', name: 'תכנון חומרי גמר לווילה', category: 'villas', description: 'בחירת חומרי בניין, צבע ואיטום בהתאם לתוכניות', unit: 'פרויקט', price: 3500 },
+  { id: 'villa-construction-package', name: 'חבילת חומרי בנייה לווילה', category: 'villas', description: 'אספקה מרוכזת של חומרי בנייה לפרויקט וילה', unit: 'הצעת מחיר', price: 15000 },
 ];
 
 export const productsById = new Map(products.map((p) => [p.id, p]));

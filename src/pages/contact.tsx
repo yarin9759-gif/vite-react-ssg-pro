@@ -1,13 +1,15 @@
-import { Clock, Mail, MapPin, Phone } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa';
+import { Clock, Mail, MapPin, Phone, UserRound } from 'lucide-react';
+import { FaPaypal, FaWhatsapp } from 'react-icons/fa';
 import PageHeader from '@/components/PageHeader';
 import { site, whatsappLink } from '@/data/site';
 
 export default function ContactPage() {
   const channels = [
+    { icon: UserRound, label: 'בעלים', value: site.owner },
     { icon: Phone, label: 'טלפון', value: site.phone, href: `tel:${site.phone}`, ltr: true },
-    { icon: FaWhatsapp, label: 'וואטסאפ', value: 'שלחו הודעה', href: whatsappLink() },
+    { icon: FaWhatsapp, label: 'וואטסאפ', value: site.phone, href: whatsappLink(), ltr: true },
     { icon: Mail, label: 'אימייל', value: site.email, href: `mailto:${site.email}` },
+    { icon: FaPaypal, label: 'תשלום ב-PayPal', value: site.paypal, href: `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(site.paypal)}&currency_code=ILS` },
     { icon: MapPin, label: 'כתובת', value: site.address },
   ];
 

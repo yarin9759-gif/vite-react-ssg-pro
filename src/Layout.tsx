@@ -4,6 +4,7 @@ import SEOTitle from './components/SEOTitle';
 import LoadingScreen from './components/LoadingScreen';
 import Navbar from '@/components/Navbar';
 import Footer from './components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Layout: FC = () => {
   const location = useLocation();
@@ -22,6 +23,7 @@ const Layout: FC = () => {
           <Outlet />
         </main>
         <Footer />
+        <WhatsAppButton />
       </div>
     </>
   );

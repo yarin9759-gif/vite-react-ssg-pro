@@ -1,11 +1,11 @@
 import { useState, type SubmitEvent } from 'react';
 import { Link } from 'react-router';
 import { ShoppingCart, Trash2 } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaPaypal, FaWhatsapp } from 'react-icons/fa';
 import PageHeader from '@/components/PageHeader';
 import { QuantityStepper } from '@/components/ProductCard';
 import { formatPrice, getCategory, productsById } from '@/data/products';
-import { whatsappLink } from '@/data/site';
+import { paypalLink, site, whatsappLink } from '@/data/site';
 import { clearCart, setQuantity, useCart } from '@/cart';
 
 const inputClass =
@@ -38,7 +38,11 @@ export default function CartPage() {
     ]
       .filter((line, i, all) => line !== '' || all[i - 1] !== '')
       .join('\n');
-    window.open(whatsappLink(message), '_blank', 'noopener');
+
+    // The PayPal button submits the same form so the customer's details are validated first
+    const payWithPaypal = (e.nativeEvent.submitter as HTMLElement | null)?.dataset.action === 'paypal';
+    const url = payWithPaypal ? paypalLink(total, `הזמנה מ${site.name} – ${form.get('name')}`) : whatsappLink(message);
+    window.open(url, '_blank', 'noopener');
   };
 
   if (lines.length === 0) {
@@ -137,6 +141,14 @@ export default function CartPage() {
           >
             <FaWhatsapp className="w-5 h-5" />
             שליחת ההזמנה בוואטסאפ
+          </button>
+          <button
+            type="submit"
+            data-action="paypal"
+            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-lg bg-[#0070ba] text-white font-bold hover:bg-[#005ea6] transition-colors"
+          >
+            <FaPaypal className="w-5 h-5" />
+            תשלום ב-PayPal ({formatPrice(total)})
           </button>
           <p className="text-xs text-stone-500 leading-relaxed">
             המחירים כוללים מע״מ ואינם כוללים דמי משלוח. נציג יחזור אליכם לאישור ההזמנה, זמינות המלאי ותיאום אספקה.

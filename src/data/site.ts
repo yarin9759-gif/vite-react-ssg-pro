@@ -1,12 +1,15 @@
-// Business details shown across the site. Replace the placeholders with the real ones.
+// Business details shown across the site.
 export const site = {
-  name: 'בונים פלוס',
+  name: 'בונים מקיר לקיר',
+  owner: 'ירין שמואל',
   tagline: 'חומרי בניין, צבעים ואיטום',
-  phone: '050-000-0000',
+  phone: '054-945-7447',
   // International format without "+" or leading zero, used for wa.me links
-  whatsapp: '972500000000',
-  email: 'info@example.co.il',
-  address: 'רחוב התעשייה 1, אזור התעשייה',
+  whatsapp: '972549457447',
+  email: 'yarin9759@gmail.com',
+  // PayPal account (email) that receives payments
+  paypal: 'yarin9759@gmail.com',
+  address: 'רחוב המעיין',
   hours: [
     { days: 'ראשון–חמישי', time: '07:00–17:00' },
     { days: 'שישי וערבי חג', time: '07:00–13:00' },
@@ -16,4 +19,17 @@ export const site = {
 export function whatsappLink(text?: string) {
   const base = `https://wa.me/${site.whatsapp}`;
   return text ? `${base}?text=${encodeURIComponent(text)}` : base;
+}
+
+// PayPal checkout for a fixed amount in ILS, paid to site.paypal
+export function paypalLink(amount: number, itemName: string) {
+  const params = new URLSearchParams({
+    cmd: '_xclick',
+    business: site.paypal,
+    item_name: itemName,
+    amount: amount.toFixed(2),
+    currency_code: 'ILS',
+    charset: 'utf-8',
+  });
+  return `https://www.paypal.com/cgi-bin/webscr?${params}`;
 }

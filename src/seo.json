@@ -1,6 +1,6 @@
 {
   "_global": {
-    "siteName": "בונים פלוס",
+    "siteName": "בונים מקיר לקיר",
     "domain": "https://vite-react-ssg-pro.pages.dev",
     "locale": "he_IL",
     "defaultRobots": "index, follow",
@@ -12,24 +12,25 @@
       "instagram": "https://instagram.com/example"
     },
     "contact": {
-      "email": "info@example.co.il",
+      "email": "yarin9759@gmail.com",
+      "telephone": "+972-54-945-7447",
       "type": "Customer Service"
     },
     "organization": {
-      "name": "בונים פלוס",
+      "name": "בונים מקיר לקיר",
       "description": "חומרי בניין, צבעים ומוצרי איטום לקבלנים וללקוחות פרטיים.",
       "foundingDate": "2025",
       "url": "https://vite-react-ssg-pro.pages.dev"
     }
   },
   "/": {
-    "title": "בונים פלוס – חומרי בניין, צבעים ואיטום",
+    "title": "בונים מקיר לקיר – חומרי בניין, צבעים ואיטום",
     "description": "חומרי בניין, צבעים ומוצרי איטום במחירים הוגנים. משלוחים לאתרי בנייה ולבתים, ייעוץ מקצועי והזמנה מהירה בוואטסאפ.",
     "keywords": "חומרי בניין,צבע,איטום,מלט,איטום גגות,צבע לקירות,דבק קרמיקה",
     "canonical": "https://vite-react-ssg-pro.pages.dev/",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
-    "ogImageAlt": "בונים פלוס – חומרי בניין, צבעים ואיטום",
+    "ogImageAlt": "בונים מקיר לקיר – חומרי בניין, צבעים ואיטום",
     "ogImageWidth": 1200,
     "ogImageHeight": 630,
     "twitterCard": "summary_large_image",
@@ -44,13 +45,13 @@
     }
   },
   "/products": {
-    "title": "קטלוג מוצרים – בונים פלוס",
+    "title": "קטלוג מוצרים – בונים מקיר לקיר",
     "description": "מלט, טיט, בלוקים, צבעי פנים וחוץ, איטום גגות וחדרים רטובים, כלי עבודה ועוד.",
     "keywords": "קטלוג חומרי בניין,מחירון צבע,מוצרי איטום,כלי עבודה",
     "canonical": "https://vite-react-ssg-pro.pages.dev/products",
     "ogType": "website",
     "ogImage": "/images/og/og-products.webp",
-    "ogImageAlt": "קטלוג מוצרים – בונים פלוס",
+    "ogImageAlt": "קטלוג מוצרים – בונים מקיר לקיר",
     "ogImageWidth": 1200,
     "ogImageHeight": 630,
     "twitterCard": "summary_large_image",
@@ -63,13 +64,13 @@
     }
   },
   "/cart": {
-    "title": "סל קניות – בונים פלוס",
+    "title": "סל קניות – בונים מקיר לקיר",
     "description": "סל הקניות שלך. שליחת הזמנה מהירה בוואטסאפ.",
     "keywords": "סל קניות",
     "canonical": "https://vite-react-ssg-pro.pages.dev/cart",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
-    "ogImageAlt": "סל קניות – בונים פלוס",
+    "ogImageAlt": "סל קניות – בונים מקיר לקיר",
     "ogImageWidth": 1200,
     "ogImageHeight": 630,
     "twitterCard": "summary_large_image",
@@ -82,13 +83,13 @@
     }
   },
   "/about": {
-    "title": "אודות – בונים פלוס",
+    "title": "אודות – בונים מקיר לקיר",
     "description": "מרכז לחומרי בניין, צבעים ואיטום עם ייעוץ מקצועי ומשלוחים לכל האזור.",
     "keywords": "אודות,חנות חומרי בניין",
     "canonical": "https://vite-react-ssg-pro.pages.dev/about",
     "ogType": "website",
     "ogImage": "/images/og/og-about.webp",
-    "ogImageAlt": "אודות – בונים פלוס",
+    "ogImageAlt": "אודות – בונים מקיר לקיר",
     "ogImageWidth": 1200,
     "ogImageHeight": 630,
     "twitterCard": "summary_large_image",
@@ -101,13 +102,13 @@
     }
   },
   "/contact": {
-    "title": "צור קשר – בונים פלוס",
+    "title": "צור קשר – בונים מקיר לקיר",
     "description": "טלפון, וואטסאפ, כתובת ושעות פעילות. נשמח לתת הצעת מחיר וייעוץ.",
     "keywords": "צור קשר,הצעת מחיר חומרי בניין",
     "canonical": "https://vite-react-ssg-pro.pages.dev/contact",
     "ogType": "website",
     "ogImage": "/images/og/og-contact.webp",
-    "ogImageAlt": "צור קשר – בונים פלוס",
+    "ogImageAlt": "צור קשר – בונים מקיר לקיר",
     "ogImageWidth": 1200,
     "ogImageHeight": 630,
     "twitterCard": "summary_large_image",

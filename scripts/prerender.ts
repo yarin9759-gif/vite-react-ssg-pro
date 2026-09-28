@@ -185,7 +185,8 @@ function generateSchemaMarkup(routePath: string): string {
             "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": globalConfig.contact.type,
-                "email": globalConfig.contact.email
+                "email": globalConfig.contact.email,
+                ...(globalConfig.contact.telephone && { "telephone": globalConfig.contact.telephone })
             }
         });
     }
