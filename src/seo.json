@@ -1,7 +1,7 @@
 {
   "_global": {
     "siteName": "בונים מקיר לקיר",
-    "domain": "https://vite-react-ssg-pro.pages.dev",
+    "domain": "https://bonim-mikir-lekir.pages.dev",
     "locale": "he_IL",
     "defaultRobots": "index, follow",
     "defaultImage": "/images/og/og-default.webp",
@@ -20,14 +20,14 @@
       "name": "בונים מקיר לקיר",
       "description": "חומרי בניין, צבעים ומוצרי איטום לקבלנים וללקוחות פרטיים.",
       "foundingDate": "2025",
-      "url": "https://vite-react-ssg-pro.pages.dev"
+      "url": "https://bonim-mikir-lekir.pages.dev"
     }
   },
   "/": {
     "title": "בונים מקיר לקיר – חומרי בניין, צבעים ואיטום",
     "description": "חומרי בניין, צבעים ומוצרי איטום במחירים הוגנים. משלוחים לאתרי בנייה ולבתים, ייעוץ מקצועי והזמנה מהירה בוואטסאפ.",
     "keywords": "חומרי בניין,צבע,איטום,מלט,איטום גגות,צבע לקירות,דבק קרמיקה",
-    "canonical": "https://vite-react-ssg-pro.pages.dev/",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "בונים מקיר לקיר – חומרי בניין, צבעים ואיטום",
@@ -48,7 +48,7 @@
     "title": "קטלוג מוצרים – בונים מקיר לקיר",
     "description": "מלט, טיט, בלוקים, צבעי פנים וחוץ, איטום גגות וחדרים רטובים, כלי עבודה ועוד.",
     "keywords": "קטלוג חומרי בניין,מחירון צבע,מוצרי איטום,כלי עבודה",
-    "canonical": "https://vite-react-ssg-pro.pages.dev/products",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/products",
     "ogType": "website",
     "ogImage": "/images/og/og-products.webp",
     "ogImageAlt": "קטלוג מוצרים – בונים מקיר לקיר",
@@ -67,7 +67,7 @@
     "title": "סל קניות – בונים מקיר לקיר",
     "description": "סל הקניות שלך. שליחת הזמנה מהירה בוואטסאפ.",
     "keywords": "סל קניות",
-    "canonical": "https://vite-react-ssg-pro.pages.dev/cart",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/cart",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "סל קניות – בונים מקיר לקיר",
@@ -86,7 +86,7 @@
     "title": "אודות – בונים מקיר לקיר",
     "description": "מרכז לחומרי בניין, צבעים ואיטום עם ייעוץ מקצועי ומשלוחים לכל האזור.",
     "keywords": "אודות,חנות חומרי בניין",
-    "canonical": "https://vite-react-ssg-pro.pages.dev/about",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/about",
     "ogType": "website",
     "ogImage": "/images/og/og-about.webp",
     "ogImageAlt": "אודות – בונים מקיר לקיר",
@@ -105,7 +105,7 @@
     "title": "צור קשר – בונים מקיר לקיר",
     "description": "טלפון, וואטסאפ, כתובת ושעות פעילות. נשמח לתת הצעת מחיר וייעוץ.",
     "keywords": "צור קשר,הצעת מחיר חומרי בניין",
-    "canonical": "https://vite-react-ssg-pro.pages.dev/contact",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/contact",
     "ogType": "website",
     "ogImage": "/images/og/og-contact.webp",
     "ogImageAlt": "צור קשר – בונים מקיר לקיר",
