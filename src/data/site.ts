@@ -13,7 +13,7 @@ export const site = {
   paypalEnabled: false,
   address: 'רחוב המעיין',
   hours: [
-    { days: 'ראשון–חמישי', time: '07:00–17:00' },
+    { days: 'ראשון–חמישי', time: '08:30–20:30' },
     { days: 'שישי וערבי חג', time: '07:00–13:00' },
   ],
 };
