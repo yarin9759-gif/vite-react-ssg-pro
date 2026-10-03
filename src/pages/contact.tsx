@@ -9,7 +9,7 @@ export default function ContactPage() {
     { icon: Phone, label: 'טלפון', value: site.phone, href: `tel:${site.phone}`, ltr: true },
     { icon: FaWhatsapp, label: 'וואטסאפ', value: site.phone, href: whatsappLink(), ltr: true },
     { icon: Mail, label: 'אימייל', value: site.email, href: `mailto:${site.email}` },
-    { icon: FaPaypal, label: 'תשלום ב-PayPal', value: site.paypal, href: `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(site.paypal)}&currency_code=ILS` },
+    ...(site.paypalEnabled ? [{ icon: FaPaypal, label: 'תשלום ב-PayPal', value: site.paypal, href: `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(site.paypal)}&currency_code=ILS` }] : []),
     { icon: MapPin, label: 'כתובת', value: site.address },
   ];
 

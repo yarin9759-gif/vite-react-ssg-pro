@@ -9,6 +9,8 @@ export const site = {
   email: 'yarin9759@gmail.com',
   // PayPal account (email) that receives payments
   paypal: 'yarin9759@gmail.com',
+  // Temporarily off: hides the PayPal button (cart) and card (contact). Set to true to bring them back.
+  paypalEnabled: false,
   address: 'רחוב המעיין',
   hours: [
     { days: 'ראשון–חמישי', time: '07:00–17:00' },

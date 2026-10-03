@@ -142,14 +142,16 @@ export default function CartPage() {
             <FaWhatsapp className="w-5 h-5" />
             שליחת ההזמנה בוואטסאפ
           </button>
-          <button
-            type="submit"
-            data-action="paypal"
-            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-lg bg-[#0070ba] text-white font-bold hover:bg-[#005ea6] transition-colors"
-          >
-            <FaPaypal className="w-5 h-5" />
-            תשלום ב-PayPal ({formatPrice(total)})
-          </button>
+          {site.paypalEnabled && (
+            <button
+              type="submit"
+              data-action="paypal"
+              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-lg bg-[#0070ba] text-white font-bold hover:bg-[#005ea6] transition-colors"
+            >
+              <FaPaypal className="w-5 h-5" />
+              תשלום ב-PayPal ({formatPrice(total)})
+            </button>
+          )}
           <p className="text-xs text-stone-500 leading-relaxed">
             המחירים כוללים מע״מ ואינם כוללים דמי משלוח. נציג יחזור אליכם לאישור ההזמנה, זמינות המלאי ותיאום אספקה.
           </p>
