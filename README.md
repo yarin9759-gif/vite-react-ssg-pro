@@ -165,6 +165,7 @@ No serverless functions, no Node.js runtime, no hidden costs.
 
 ## 📚 Documentation
 
+- **[Consultation Booking (Hebrew)](docs/booking.md)** - Booking flow, admin area, Cloudflare D1 setup and secrets
 - **[Getting Started](docs/getting-started.md)** - Your first 5 minutes
 - **[Architecture Guide](docs/architecture.md)** - How everything works
 - **[SEO Best Practices](docs/seo-guide.md)** - Maximize your search rankings

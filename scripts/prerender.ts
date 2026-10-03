@@ -73,6 +73,8 @@ interface SEOConfig {
     title: string;
     description: string;
     keywords?: string;
+    // Overrides _global.defaultRobots; pages containing "noindex" are left out of the sitemap
+    robots?: string;
     canonical: string;
     ogType: string;
     ogImage: string;
@@ -162,8 +164,8 @@ function generateMetaTags(routePath: string): string {
     ${seo.schema?.article && seo.publishedDate ? `<meta property="article:published_time" content="${seo.publishedDate}" />` : ''}
     
     <!-- Additional SEO -->
-    <meta name="robots" content="${globalConfig.defaultRobots}" />
-    <meta name="googlebot" content="${globalConfig.defaultRobots}" />`;
+    <meta name="robots" content="${seo.robots || globalConfig.defaultRobots}" />
+    <meta name="googlebot" content="${seo.robots || globalConfig.defaultRobots}" />`;
 
     return tags;
 }
@@ -263,7 +265,8 @@ function generateSchemaMarkup(routePath: string): string {
 function generateSitemap(routes: RouteConfig[]): string {
     const now = new Date().toISOString();
 
-    const urlEntries = routes.map(route => {
+    const indexable = routes.filter(route => !(seoConfig[route.path] as SEOConfig | undefined)?.robots?.includes('noindex'));
+    const urlEntries = indexable.map(route => {
         const seo: SEOConfig = seoConfig[route.path] || seoConfig['/'];
 
         // Use sitemap config from seo.json or fallback to defaults

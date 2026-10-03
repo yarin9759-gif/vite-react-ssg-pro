@@ -42,3 +42,6 @@ src-errors
 
 # typescript
 *.tsbuildinfo
+
+# Cloudflare local secrets (wrangler pages dev)
+.dev.vars

@@ -1,0 +1,11 @@
+# Cloudflare Pages config: static site in dist/ + API in functions/ + D1 database.
+# Secrets (ADMIN_PASSWORD, SESSION_SECRET) are NOT stored here - see docs/booking.md.
+name = "bonim-mikir-lekir"
+pages_build_output_dir = "./dist"
+compatibility_date = "2025-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bonim-booking"
+database_id = "8b5dda5d-6ab7-4027-8674-753319d7cc97"
+migrations_dir = "migrations"

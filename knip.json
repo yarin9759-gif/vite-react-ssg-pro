@@ -11,10 +11,10 @@
     ".cursor/**",
     "docs/**"
   ],
-  "workspaces": {
-    "default": {
-      "project": ["./src/**/*.{ts,tsx}"],
-      "ignoreDependencies": ["@typescript/native"]
-    }
-  }
+  "entry": ["src/main.tsx!", "functions/**/*.ts!"],
+  "project": ["src/**/*.{ts,tsx}!", "functions/**/*.ts!"],
+  "ignoreIssues": {
+    "functions/**": ["exports"]
+  },
+  "ignoreDependencies": ["@typescript/native", "@cloudflare/workers-types"]
 }

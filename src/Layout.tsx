@@ -8,6 +8,8 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Layout: FC = () => {
   const location = useLocation();
+  // These pages have their own bottom action bars or WhatsApp buttons
+  const showWhatsApp = !['/booking', '/booking-status', '/admin'].includes(location.pathname);
 
   // Scroll to top on route change
   useEffect(() => {
@@ -23,7 +25,7 @@ const Layout: FC = () => {
           <Outlet />
         </main>
         <Footer />
-        <WhatsAppButton />
+        {showWhatsApp && <WhatsAppButton />}
       </div>
     </>
   );

@@ -1,8 +1,9 @@
 import { Link } from 'react-router';
-import { ArrowLeft, BadgeCheck, Phone, ShieldCheck, Truck } from 'lucide-react';
+import { ArrowLeft, BadgeCheck, CalendarPlus, Phone, ShieldCheck, Truck } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import Hero from '@/components/Hero';
 import ProductCard from '@/components/ProductCard';
+import { services } from '@/data/booking';
 import { categories, products } from '@/data/products';
 import { site, whatsappLink } from '@/data/site';
 
@@ -64,6 +65,32 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="container mx-auto px-4 pt-16">
+        <div className="rounded-2xl bg-white border border-stone-200 p-6 md:p-10 grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-3">פגישת ייעוץ עם {site.owner}</h2>
+            <p className="text-stone-600 mb-6">
+              בוחרים נושא, יום ושעה פנויים — והבקשה נשלחת לאישור. תוכלו לעקוב אחרי הסטטוס בכל רגע.
+            </p>
+            <Link
+              to="/booking"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-amber-500 text-stone-900 font-bold hover:bg-amber-400 transition-colors"
+            >
+              <CalendarPlus className="w-5 h-5" aria-hidden="true" />
+              קביעת פגישה
+            </Link>
+          </div>
+          <ul className="grid gap-3">
+            {services.map((service) => (
+              <li key={service.id} className="rounded-xl bg-stone-50 border border-stone-200 p-4">
+                <p className="font-bold text-stone-900">{service.name}</p>
+                <p className="text-sm text-stone-600">{service.description}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

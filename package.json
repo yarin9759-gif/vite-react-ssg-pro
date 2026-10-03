@@ -5,19 +5,24 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "pnpm lint && pnpm core:build",
+    "build": "pnpm lint && pnpm test:unit && pnpm core:build",
     "core:build": "cross-env NODE_ENV=production vite build && pnpm prerender && pnpm compress",
     "preview": "vite preview",
+    "preview:full": "wrangler pages dev ./dist",
     "lint": "tsx scripts/lint.ts",
     "unused": "knip --production --dependencies --files --exports --include-entry-exports && depcheck",
     "test": "pnpm lint && pnpm core:build && vite preview",
+    "test:unit": "tsx --test tests/*.test.ts",
     "upload": "pnpm build && wrangler pages deploy ./dist",
     "prerender": "tsx --tsconfig tsconfig.app.json scripts/prerender.ts",
     "compress": "tsx --tsconfig tsconfig.app.json scripts/compress.ts",
     "og-screenshots": "python scripts/generate_og_screenshots.py --port 5173 --seo src/seo.json --cleanup",
-    "analyze": "cross-env ANALYZE=true pnpm core:build"
+    "analyze": "cross-env ANALYZE=true pnpm core:build",
+    "db:migrate:local": "wrangler d1 migrations apply bonim-booking --local",
+    "db:migrate:remote": "wrangler d1 migrations apply bonim-booking --remote"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261002.1",
     "@eslint/js": "^10.0.1",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.1.2",

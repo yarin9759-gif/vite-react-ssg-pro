@@ -148,6 +148,13 @@ export default defineConfig(
     },
   },
   {
+    // The API bundle (functions/) and tests don't resolve the '@/' alias, so they import src/ relatively
+    files: ['functions/**/*.ts', 'tests/**/*.ts'],
+    rules: {
+      'no-restricted-imports': 'off',
+    },
+  },
+  {
     files: ['vite.config.ts'],
     languageOptions: {
       ecmaVersion: "latest",

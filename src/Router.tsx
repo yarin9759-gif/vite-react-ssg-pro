@@ -8,6 +8,9 @@ const Products = lazy(() => import('./pages/products'))
 const Cart = lazy(() => import('./pages/cart'))
 const About = lazy(() => import('./pages/about'))
 const Contact = lazy(() => import('./pages/contact'))
+const Booking = lazy(() => import('./pages/booking'))
+const BookingStatus = lazy(() => import('./pages/booking-status'))
+const Admin = lazy(() => import('./pages/admin'))
 
 function Router() {
   return (
@@ -20,6 +23,9 @@ function Router() {
             <Route path="cart" element={<Cart />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="booking" element={<Booking />} />
+            <Route path="booking-status" element={<BookingStatus />} />
+            <Route path="admin" element={<Admin />} />
             <Route
               path='*'
               element={

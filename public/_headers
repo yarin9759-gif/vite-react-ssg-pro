@@ -13,3 +13,10 @@
 
 /.vite/*
   X-Robots-Tag: noindex
+
+/admin
+  X-Robots-Tag: noindex
+  Cache-Control: no-store
+
+/booking-status
+  X-Robots-Tag: noindex

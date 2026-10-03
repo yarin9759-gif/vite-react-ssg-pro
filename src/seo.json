@@ -119,5 +119,62 @@
     "schema": {
       "breadcrumb": true
     }
+  },
+  "/booking": {
+    "title": "קביעת פגישת ייעוץ – בונים מקיר לקיר",
+    "description": "קביעת פגישת ייעוץ עם ירין שמואל: ניהול פרויקט, וילות, חומרי בניין, צבע ואיטום. בוחרים מועד פנוי ושולחים בקשה לאישור.",
+    "keywords": "פגישת ייעוץ,ייעוץ בנייה,ניהול פרויקט,ייעוץ איטום",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/booking",
+    "ogType": "website",
+    "ogImage": "/images/og/og-home.webp",
+    "ogImageAlt": "קביעת פגישת ייעוץ – בונים מקיר לקיר",
+    "ogImageWidth": 1200,
+    "ogImageHeight": 630,
+    "twitterCard": "summary_large_image",
+    "sitemap": {
+      "changefreq": "weekly",
+      "priority": 0.8
+    },
+    "schema": {
+      "breadcrumb": true
+    }
+  },
+  "/booking-status": {
+    "title": "סטטוס בקשה לפגישה – בונים מקיר לקיר",
+    "description": "בדיקת הסטטוס של בקשה לפגישת ייעוץ.",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/booking-status",
+    "ogType": "website",
+    "ogImage": "/images/og/og-home.webp",
+    "ogImageAlt": "סטטוס בקשה לפגישה – בונים מקיר לקיר",
+    "ogImageWidth": 1200,
+    "ogImageHeight": 630,
+    "twitterCard": "summary_large_image",
+    "robots": "noindex, nofollow",
+    "sitemap": {
+      "changefreq": "yearly",
+      "priority": 0.1
+    },
+    "schema": {
+      "breadcrumb": false
+    }
+  },
+  "/admin": {
+    "title": "ניהול פגישות – בונים מקיר לקיר",
+    "description": "אזור ניהול.",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/admin",
+    "ogType": "website",
+    "ogImage": "/images/og/og-home.webp",
+    "ogImageAlt": "ניהול פגישות – בונים מקיר לקיר",
+    "ogImageWidth": 1200,
+    "ogImageHeight": 630,
+    "twitterCard": "summary_large_image",
+    "robots": "noindex, nofollow",
+    "sitemap": {
+      "changefreq": "yearly",
+      "priority": 0.1
+    },
+    "schema": {
+      "breadcrumb": false
+    }
   }
 }

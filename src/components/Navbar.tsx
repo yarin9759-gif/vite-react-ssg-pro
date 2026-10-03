@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router';
 import { useState } from 'react';
-import { HardHat, Menu, Phone, ShoppingCart, X } from 'lucide-react';
+import { CalendarPlus, HardHat, Menu, Phone, ShoppingCart, X } from 'lucide-react';
 import { site } from '@/data/site';
 import { useCart } from '@/cart';
 
@@ -46,6 +46,14 @@ export default function Navbar() {
             <span dir="ltr">{site.phone}</span>
           </a>
           <Link
+            to="/booking"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-amber-500 text-stone-900 text-sm font-bold hover:bg-amber-400"
+          >
+            <CalendarPlus className="w-4 h-4" aria-hidden="true" />
+            קביעת פגישה
+          </Link>
+          <Link
             to="/cart"
             onClick={() => setIsMobileMenuOpen(false)}
             className="relative p-2 rounded-lg text-stone-700 hover:bg-stone-100"
@@ -82,6 +90,14 @@ export default function Navbar() {
               {link.name}
             </NavLink>
           ))}
+          <Link
+            to="/booking"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="mt-2 flex items-center justify-center gap-2 py-3 rounded-lg bg-amber-500 text-stone-900 text-lg font-bold"
+          >
+            <CalendarPlus className="w-5 h-5" aria-hidden="true" />
+            קביעת פגישת ייעוץ
+          </Link>
           <a href={`tel:${site.phone}`} className="flex items-center gap-2 py-3 text-lg font-medium text-stone-700">
             <Phone className="w-5 h-5" />
             <span dir="ltr">{site.phone}</span>
