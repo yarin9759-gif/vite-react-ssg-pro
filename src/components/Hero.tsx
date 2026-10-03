@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="relative container mx-auto px-4 py-20 md:py-28">
         <div className="max-w-2xl">
           <p className="inline-block px-3 py-1 mb-6 rounded-full bg-amber-500/15 text-amber-400 text-sm font-medium">
-            משלוחים לכל האזור · ייעוץ מקצועי חינם
+            משלוחים לכל האזור · ייעוץ מקצועי
           </p>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-balance">
             כל מה שצריך לבנייה,
