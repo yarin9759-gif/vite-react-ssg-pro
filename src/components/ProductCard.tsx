@@ -1,5 +1,7 @@
 import { Minus, Plus, ShoppingCart } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { formatPrice, getCategory, type Product } from '@/data/products';
+import { whatsappLink } from '@/data/site';
 import { setQuantity, useCart } from '@/cart';
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -38,6 +40,15 @@ export default function ProductCard({ product }: { product: Product }) {
         ) : (
           <QuantityStepper id={product.id} quantity={quantity} />
         )}
+        <a
+          href={whatsappLink(`שלום, יש לי שאלה על ${product.name} (${product.unit})`)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 flex items-center justify-center gap-1.5 py-1.5 text-sm font-medium text-stone-600 hover:text-green-700"
+        >
+          <FaWhatsapp className="w-4 h-4" aria-hidden="true" />
+          שאלה על המוצר
+        </a>
       </div>
     </article>
   );

@@ -1,8 +1,9 @@
 import { Link } from 'react-router';
-import { ArrowLeft, BadgeCheck, CalendarPlus, Phone, ShieldCheck, Truck } from 'lucide-react';
+import { ArrowLeft, BadgeCheck, CalendarPlus, ChevronDown, Phone, Send, ShieldCheck, ShoppingCart, Truck } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import Hero from '@/components/Hero';
 import ProductCard from '@/components/ProductCard';
+import QuoteForm from '@/components/QuoteForm';
 import { services } from '@/data/booking';
 import { categories, products } from '@/data/products';
 import { site, whatsappLink } from '@/data/site';
@@ -11,6 +12,35 @@ const benefits = [
   { icon: Truck, title: 'משלוחים מהירים', text: 'עד אתר הבנייה או עד הבית, כולל מנוף לפי הצורך' },
   { icon: BadgeCheck, title: 'ייעוץ מקצועי', text: 'צוות עם ניסיון בשטח שיעזור לבחור את החומר הנכון' },
   { icon: ShieldCheck, title: 'מותגים מובילים', text: 'מוצרים מאושרים בתקן ישראלי עם אחריות יצרן' },
+];
+
+const steps = [
+  { icon: ShoppingCart, title: 'בוחרים מוצרים', text: 'מוסיפים לסל מהקטלוג, או פשוט כותבים לנו מה צריך' },
+  { icon: Send, title: 'שולחים בוואטסאפ', text: 'ההזמנה נשלחת בלחיצה, ואנחנו חוזרים עם אישור ומחיר סופי' },
+  { icon: Truck, title: 'מקבלים עד האתר', text: 'משלוח לאתר הבנייה או עד הבית, בתיאום מראש' },
+];
+
+const faq = [
+  {
+    q: 'איך מזמינים?',
+    a: `מוסיפים מוצרים לסל ושולחים את ההזמנה בוואטסאפ, או מתקשרים ל־${site.phone}. נחזור אליכם עם אישור, מחיר סופי ומועד אספקה.`,
+  },
+  {
+    q: 'יש משלוחים?',
+    a: 'כן — לאתרי בנייה ולבתים פרטיים בכל האזור, כולל מנוף לפי הצורך. פרטי המשלוח ועלותו נמסרים באישור ההזמנה.',
+  },
+  {
+    q: 'אפשר לקבל מחיר מיוחד לכמויות גדולות?',
+    a: 'בהחלט. לקבלנים ולפרויקטים גדולים אנחנו נותנים הצעת מחיר מותאמת — שלחו רשימה בוואטסאפ או מלאו את טופס הצעת המחיר.',
+  },
+  {
+    q: 'לא בטוחים איזה חומר מתאים?',
+    a: `תתקשרו או תשלחו תמונה של העבודה בוואטסאפ, ונמליץ על החומר והכמות הנכונים. לפרויקט שלם אפשר לקבוע פגישת ייעוץ מסודרת עם ${site.owner}.`,
+  },
+  {
+    q: 'מה שעות הפעילות?',
+    a: `${site.hours.map((row) => `${row.days}: ${row.time}`).join(' · ')}. בשבת סגור.`,
+  },
 ];
 
 // One highlighted product from each category
@@ -105,6 +135,59 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featured.map((product) => (
             <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-white border-y border-stone-200">
+        <div className="container mx-auto px-4 py-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-8 text-center">איך מזמינים?</h2>
+          <ol className="grid gap-6 md:grid-cols-3">
+            {steps.map((step, index) => (
+              <li key={step.title} className="relative rounded-xl bg-stone-50 border border-stone-200 p-6">
+                <span className="absolute top-4 end-4 text-4xl font-bold text-stone-200" aria-hidden="true">
+                  {index + 1}
+                </span>
+                <step.icon className="w-8 h-8 text-amber-600 mb-3" aria-hidden="true" />
+                <h3 className="font-bold text-stone-900 mb-1">{step.title}</h3>
+                <p className="text-sm text-stone-600">{step.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="container mx-auto px-4 py-16">
+        <div className="grid gap-8 lg:grid-cols-5 lg:items-start">
+          <div className="lg:col-span-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-3">הצעת מחיר תוך דקה</h2>
+            <p className="text-stone-600 mb-4">
+              כתבו מה אתם צריכים — הבקשה תישלח ישירות לוואטסאפ של {site.owner}, ותקבלו מחיר מותאם לכמויות ולמיקום.
+            </p>
+            <p className="text-stone-600">
+              מעדיפים לדבר?{' '}
+              <a href={`tel:${site.phone}`} dir="ltr" className="font-bold text-amber-700 hover:text-amber-800">
+                {site.phone}
+              </a>
+            </p>
+          </div>
+          <div className="lg:col-span-3 rounded-2xl bg-white border border-stone-200 p-6 md:p-8">
+            <QuoteForm />
+          </div>
+        </div>
+      </section>
+
+      <section className="container mx-auto px-4 pb-16 max-w-3xl">
+        <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-6 text-center">שאלות נפוצות</h2>
+        <div className="grid gap-3">
+          {faq.map((item) => (
+            <details key={item.q} className="group rounded-xl bg-white border border-stone-200 p-5 open:border-amber-400">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-stone-900 [&::-webkit-details-marker]:hidden">
+                {item.q}
+                <ChevronDown className="w-5 h-5 shrink-0 text-stone-500 transition-transform group-open:rotate-180" aria-hidden="true" />
+              </summary>
+              <p className="mt-3 text-stone-600 leading-relaxed">{item.a}</p>
+            </details>
           ))}
         </div>
       </section>

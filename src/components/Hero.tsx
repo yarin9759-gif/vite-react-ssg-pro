@@ -1,7 +1,9 @@
 import { Link } from 'react-router';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, CircleCheck } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { site, whatsappLink } from '@/data/site';
+
+const trustPoints = ['הזמנה מהירה בוואטסאפ', 'משלוח לאתר או עד הבית', 'הצעת מחיר מותאמת לכמויות'];
 
 export default function Hero() {
   return (
@@ -48,7 +50,15 @@ export default function Hero() {
               הצעת מחיר בוואטסאפ
             </a>
           </div>
-          <p className="mt-8 text-stone-300">
+          <ul className="mt-8 grid gap-2 sm:grid-cols-3 text-sm text-stone-200">
+            {trustPoints.map((point) => (
+              <li key={point} className="flex items-center gap-2">
+                <CircleCheck className="w-4 h-4 shrink-0 text-amber-400" aria-hidden="true" />
+                {point}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-stone-300">
             {site.owner} ·{' '}
             <a href={`tel:${site.phone}`} dir="ltr" className="font-bold text-white hover:text-amber-400">
               {site.phone}

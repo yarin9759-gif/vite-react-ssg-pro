@@ -5,6 +5,7 @@ import LoadingScreen from './components/LoadingScreen';
 import Navbar from '@/components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import MobileActionBar from '@/components/MobileActionBar';
 
 const Layout: FC = () => {
   const location = useLocation();
@@ -25,7 +26,14 @@ const Layout: FC = () => {
           <Outlet />
         </main>
         <Footer />
-        {showWhatsApp && <WhatsAppButton />}
+        {showWhatsApp && (
+          <>
+            <WhatsAppButton />
+            <MobileActionBar />
+            {/* Keeps the footer clear of the mobile action bar */}
+            <div className="md:hidden h-16 bg-stone-900" aria-hidden="true" />
+          </>
+        )}
       </div>
     </>
   );
