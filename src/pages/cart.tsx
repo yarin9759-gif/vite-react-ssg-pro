@@ -70,9 +70,14 @@ export default function CartPage() {
             const category = getCategory(product.category);
             return (
               <div key={product.id} className="flex flex-wrap sm:flex-nowrap items-center gap-4 p-4">
-                <span className={`w-14 h-14 shrink-0 rounded-lg flex items-center justify-center ${category.tint}`}>
-                  <category.icon className="w-7 h-7" />
-                </span>
+                <img
+                  src={product.image ?? category.image}
+                  alt=""
+                  width={56}
+                  height={56}
+                  loading="lazy"
+                  className="w-14 h-14 shrink-0 rounded-lg object-cover"
+                />
                 <div className="flex-1 min-w-40">
                   <p className="font-bold text-stone-900">{product.name}</p>
                   <p className="text-sm text-stone-500">

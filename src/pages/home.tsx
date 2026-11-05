@@ -43,6 +43,17 @@ const faq = [
   },
 ];
 
+// FAQPage structured data so the questions can appear directly in Google results
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+});
+
 // One highlighted product from each category
 const featured = categories.flatMap((c) => products.filter((p) => p.category === c.id).slice(0, 1));
 
@@ -178,6 +189,7 @@ export default function Home() {
       </section>
 
       <section className="container mx-auto px-4 pb-16 max-w-3xl">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
         <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-6 text-center">שאלות נפוצות</h2>
         <div className="grid gap-3">
           {faq.map((item) => (
