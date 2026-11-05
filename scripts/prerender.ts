@@ -16,6 +16,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { Window } from 'happy-dom';
 import Beasties from 'beasties';
+import { site } from '../src/data/site';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -93,6 +94,8 @@ interface SEOConfig {
         website?: boolean;
         breadcrumb?: boolean;
         jobPosting?: boolean;
+        // LocalBusiness (HardwareStore) built from src/data/site.ts: phone, address, opening hours
+        localBusiness?: boolean;
         softwareApplication?: boolean;
         article?: boolean;
     };
@@ -183,7 +186,7 @@ function generateSchemaMarkup(routePath: string): string {
             "url": globalConfig.organization.url,
             "logo": `${globalConfig.domain}${globalConfig.logo}`,
             "description": globalConfig.organization.description,
-            "sameAs": Object.values(globalConfig.social ?? {}),
+            ...(Object.values(globalConfig.social ?? {}).length > 0 && { "sameAs": Object.values(globalConfig.social) }),
             "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": globalConfig.contact.type,
@@ -208,6 +211,40 @@ function generateSchemaMarkup(routePath: string): string {
         });
     }
 
+    // LocalBusiness Schema (address, phone and opening hours for Google search / Maps)
+    if (seo.schema?.localBusiness) {
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "HardwareStore",
+            "@id": `${globalConfig.domain}/#business`,
+            "name": site.name,
+            "description": globalConfig.organization.description,
+            "url": globalConfig.domain,
+            "image": `${globalConfig.domain}${globalConfig.defaultImage}`,
+            "logo": `${globalConfig.domain}${globalConfig.logo}`,
+            "telephone": globalConfig.contact.telephone,
+            "email": site.email,
+            "priceRange": "₪₪",
+            "currenciesAccepted": "ILS",
+            "founder": { "@type": "Person", "name": site.owner },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": site.address,
+                "addressCountry": "IL"
+            },
+            "openingHoursSpecification": site.hours.map((row) => {
+                const [opens, closes] = row.time.split(/[–-]/);
+                return {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": row.dayOfWeek,
+                    "opens": opens.trim(),
+                    "closes": closes.trim()
+                };
+            }),
+            ...(Object.values(globalConfig.social ?? {}).length > 0 && { "sameAs": Object.values(globalConfig.social) })
+        });
+    }
+
     // Breadcrumb Schema
     if (seo.schema?.breadcrumb && routePath !== '/') {
         const pathParts = routePath.split('/').filter(Boolean);
@@ -215,18 +252,21 @@ function generateSchemaMarkup(routePath: string): string {
             {
                 "@type": "ListItem",
                 "position": 1,
-                "name": "Home",
-                "item": globalConfig.domain
+                "name": "דף הבית",
+                "item": `${globalConfig.domain}/`
             }
         ];
 
         pathParts.forEach((part, index) => {
-            const url = globalConfig.domain + '/' + pathParts.slice(0, index + 1).join('/');
+            const partPath = '/' + pathParts.slice(0, index + 1).join('/');
+            const partSeo = seoConfig[partPath] as SEOConfig | undefined;
+            // Page name = the title before " – <site name>"
+            const name = partSeo?.title?.split(' – ')[0] || part;
             breadcrumbItems.push({
                 "@type": "ListItem",
                 "position": index + 2,
-                "name": part.charAt(0).toUpperCase() + part.slice(1),
-                "item": url
+                "name": name,
+                "item": globalConfig.domain + partPath
             });
         });
 
@@ -836,6 +876,8 @@ async function prerender() {
         console.log(`${colors.magenta}🤖 Generating robots.txt...${colors.reset}`);
         const robots = `User-agent: *
 Allow: /
+Disallow: /api/
+
 Sitemap: ${globalConfig.domain}/sitemap.xml`;
         const robotsPath = path.resolve(__dirname, '../dist/robots.txt');
         fs.writeFileSync(robotsPath, robots);

@@ -29,9 +29,18 @@ function Router() {
             <Route
               path='*'
               element={
-                <div className="flex flex-col items-center justify-center min-h-[60vh]">
-                  <h1 className="text-3xl font-bold mb-4">הדף לא נמצא</h1>
-                  <Link to="/" className="font-medium text-amber-600 hover:text-amber-700">חזרה לדף הבית</Link>
+                <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center min-h-[60vh]">
+                  <p className="text-6xl font-bold text-amber-500 mb-4">404</p>
+                  <h1 className="text-3xl font-bold text-stone-900 mb-3">הדף לא נמצא</h1>
+                  <p className="text-stone-600 mb-8">ייתכן שהקישור שגוי או שהדף הועבר.</p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link to="/" className="px-7 py-3 rounded-lg bg-amber-500 text-stone-900 font-bold hover:bg-amber-400">
+                      חזרה לדף הבית
+                    </Link>
+                    <Link to="/products" className="px-7 py-3 rounded-lg border border-stone-300 font-bold text-stone-700 hover:border-stone-500">
+                      לקטלוג המוצרים
+                    </Link>
+                  </div>
                 </div>
               }
             />

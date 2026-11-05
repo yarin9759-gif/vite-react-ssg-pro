@@ -1,16 +1,13 @@
 {
   "_global": {
     "siteName": "בונים מקיר לקיר",
-    "domain": "https://bonim-mikir-lekir.pages.dev",
+    "domain": "https://www.yarinsh.com",
     "locale": "he_IL",
     "defaultRobots": "index, follow",
-    "defaultImage": "/images/og/og-default.webp",
+    "defaultImage": "/images/og/og-home.webp",
     "twitterCard": "summary_large_image",
     "logo": "/images/logo.webp",
-    "social": {
-      "facebook": "https://facebook.com/example",
-      "instagram": "https://instagram.com/example"
-    },
+    "social": {},
     "contact": {
       "email": "yarin9759@gmail.com",
       "telephone": "+972-54-945-7447",
@@ -18,16 +15,16 @@
     },
     "organization": {
       "name": "בונים מקיר לקיר",
-      "description": "חומרי בניין, צבעים ומוצרי איטום לקבלנים וללקוחות פרטיים.",
+      "description": "חומרי בניין, צבעים ומוצרי איטום, ייעוץ מקצועי וניהול פרויקטים לקבלנים וללקוחות פרטיים.",
       "foundingDate": "2025",
-      "url": "https://bonim-mikir-lekir.pages.dev"
+      "url": "https://www.yarinsh.com"
     }
   },
   "/": {
     "title": "בונים מקיר לקיר – חומרי בניין, צבעים ואיטום",
-    "description": "חומרי בניין, צבעים ומוצרי איטום במחירים הוגנים. משלוחים לאתרי בנייה ולבתים, ייעוץ מקצועי והזמנה מהירה בוואטסאפ.",
+    "description": "חומרי בניין, צבעים ומוצרי איטום במחירים הוגנים. משלוחים לאתרי בנייה ולבתים, ייעוץ מקצועי, פגישות ייעוץ עם ירין שמואל והזמנה מהירה בוואטסאפ.",
     "keywords": "חומרי בניין,צבע,איטום,מלט,איטום גגות,צבע לקירות,דבק קרמיקה",
-    "canonical": "https://bonim-mikir-lekir.pages.dev/",
+    "canonical": "https://www.yarinsh.com/",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "בונים מקיר לקיר – חומרי בניין, צבעים ואיטום",
@@ -41,16 +38,17 @@
     "schema": {
       "organization": true,
       "website": false,
-      "breadcrumb": false
+      "breadcrumb": false,
+      "localBusiness": true
     }
   },
   "/products": {
     "title": "קטלוג מוצרים – בונים מקיר לקיר",
     "description": "מלט, טיט, בלוקים, צבעי פנים וחוץ, איטום גגות וחדרים רטובים, כלי עבודה ועוד.",
     "keywords": "קטלוג חומרי בניין,מחירון צבע,מוצרי איטום,כלי עבודה",
-    "canonical": "https://bonim-mikir-lekir.pages.dev/products",
+    "canonical": "https://www.yarinsh.com/products",
     "ogType": "website",
-    "ogImage": "/images/og/og-products.webp",
+    "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "קטלוג מוצרים – בונים מקיר לקיר",
     "ogImageWidth": 1200,
     "ogImageHeight": 630,
@@ -67,7 +65,7 @@
     "title": "סל קניות – בונים מקיר לקיר",
     "description": "סל הקניות שלך. שליחת הזמנה מהירה בוואטסאפ.",
     "keywords": "סל קניות",
-    "canonical": "https://bonim-mikir-lekir.pages.dev/cart",
+    "canonical": "https://www.yarinsh.com/cart",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "סל קניות – בונים מקיר לקיר",
@@ -86,7 +84,7 @@
     "title": "אודות – בונים מקיר לקיר",
     "description": "מרכז לחומרי בניין, צבעים ואיטום עם ייעוץ מקצועי ומשלוחים לכל האזור.",
     "keywords": "אודות,חנות חומרי בניין",
-    "canonical": "https://bonim-mikir-lekir.pages.dev/about",
+    "canonical": "https://www.yarinsh.com/about",
     "ogType": "website",
     "ogImage": "/images/og/og-about.webp",
     "ogImageAlt": "אודות – בונים מקיר לקיר",
@@ -105,9 +103,9 @@
     "title": "צור קשר – בונים מקיר לקיר",
     "description": "טלפון, וואטסאפ, כתובת ושעות פעילות. נשמח לתת הצעת מחיר וייעוץ.",
     "keywords": "צור קשר,הצעת מחיר חומרי בניין",
-    "canonical": "https://bonim-mikir-lekir.pages.dev/contact",
+    "canonical": "https://www.yarinsh.com/contact",
     "ogType": "website",
-    "ogImage": "/images/og/og-contact.webp",
+    "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "צור קשר – בונים מקיר לקיר",
     "ogImageWidth": 1200,
     "ogImageHeight": 630,
@@ -117,14 +115,15 @@
       "priority": 0.7
     },
     "schema": {
-      "breadcrumb": true
+      "breadcrumb": true,
+      "localBusiness": true
     }
   },
   "/booking": {
     "title": "קביעת פגישת ייעוץ – בונים מקיר לקיר",
     "description": "קביעת פגישת ייעוץ עם ירין שמואל: ניהול פרויקט, וילות, חומרי בניין, צבע ואיטום. בוחרים מועד פנוי ושולחים בקשה לאישור.",
     "keywords": "פגישת ייעוץ,ייעוץ בנייה,ניהול פרויקט,ייעוץ איטום",
-    "canonical": "https://bonim-mikir-lekir.pages.dev/booking",
+    "canonical": "https://www.yarinsh.com/booking",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "קביעת פגישת ייעוץ – בונים מקיר לקיר",
@@ -142,7 +141,7 @@
   "/booking-status": {
     "title": "סטטוס בקשה לפגישה – בונים מקיר לקיר",
     "description": "בדיקת הסטטוס של בקשה לפגישת ייעוץ.",
-    "canonical": "https://bonim-mikir-lekir.pages.dev/booking-status",
+    "canonical": "https://www.yarinsh.com/booking-status",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "סטטוס בקשה לפגישה – בונים מקיר לקיר",
@@ -161,7 +160,7 @@
   "/admin": {
     "title": "ניהול פגישות – בונים מקיר לקיר",
     "description": "אזור ניהול.",
-    "canonical": "https://bonim-mikir-lekir.pages.dev/admin",
+    "canonical": "https://www.yarinsh.com/admin",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "ניהול פגישות – בונים מקיר לקיר",

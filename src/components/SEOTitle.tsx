@@ -13,9 +13,9 @@ export default function SEOTitle(): ReactElement | null {
   useEffect(() => {
     if (!seo) return;
     const path = location.pathname || '/';
-    const config = seo[path] || seo['/'];
-    if (!config) return;
-    const title = (config.title as string) || (seo?._global?.siteName as string) || document.title;
+    const siteName = seo._global?.siteName as string | undefined;
+    const config = seo[path.length > 1 ? path.replace(/\/$/, '') : path];
+    const title = config ? config.title || siteName || document.title : `הדף לא נמצא – ${siteName ?? ''}`;
     if (title && document.title !== title) {
       document.title = title;
     }

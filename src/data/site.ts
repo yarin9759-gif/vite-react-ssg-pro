@@ -12,9 +12,10 @@ export const site = {
   // Temporarily off: hides the PayPal button (cart) and card (contact). Set to true to bring them back.
   paypalEnabled: false,
   address: 'רחוב המעיין',
+  // `time` is "HH:MM–HH:MM"; `dayOfWeek` (schema.org English day names) feeds Google's opening hours
   hours: [
-    { days: 'ראשון–חמישי', time: '08:30–20:30' },
-    { days: 'שישי וערבי חג', time: '07:00–13:00' },
+    { days: 'ראשון–חמישי', time: '08:30–20:30', dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'] },
+    { days: 'שישי וערבי חג', time: '07:00–13:00', dayOfWeek: ['Friday'] },
   ],
 };
 

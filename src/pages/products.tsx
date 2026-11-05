@@ -14,7 +14,10 @@ export default function ProductsPage() {
   const visible = products.filter(
     (p) =>
       (!activeCategory || p.category === activeCategory.id) &&
-      (!term || p.name.includes(term) || p.description.includes(term)),
+      (!term ||
+        p.name.includes(term) ||
+        p.description.includes(term) ||
+        categories.some((c) => c.id === p.category && c.name.includes(term))),
   );
 
   const selectCategory = (id?: string) => setSearchParams(id ? { cat: id } : {}, { replace: true });

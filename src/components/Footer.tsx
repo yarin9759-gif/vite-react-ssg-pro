@@ -4,6 +4,15 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { site, whatsappLink } from '@/data/site';
 import { categories } from '@/data/products';
 
+const quickLinks = [
+  { name: 'דף הבית', href: '/' },
+  { name: 'מוצרים', href: '/products' },
+  { name: 'קביעת פגישת ייעוץ', href: '/booking' },
+  { name: 'סטטוס פגישה', href: '/booking-status' },
+  { name: 'אודות', href: '/about' },
+  { name: 'צור קשר', href: '/contact' },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-stone-900 text-stone-300 mt-20">
@@ -74,8 +83,19 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-stone-800 py-4 text-center text-xs text-stone-500">
-        © {new Date().getFullYear()} {site.name}. כל הזכויות שמורות.
+      <div className="border-t border-stone-800">
+        <div className="container mx-auto px-4 py-4 md:pe-24 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-500">
+          <nav aria-label="קישורים מהירים" className="flex flex-wrap justify-center gap-x-5 gap-y-2">
+            {quickLinks.map((link) => (
+              <Link key={link.href} to={link.href} className="hover:text-amber-400">
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+          <p>
+            © {new Date().getFullYear()} {site.name}. כל הזכויות שמורות.
+          </p>
+        </div>
       </div>
     </footer>
   );
