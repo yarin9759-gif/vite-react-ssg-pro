@@ -1,7 +1,7 @@
 {
   "_global": {
     "siteName": "בונים מקיר לקיר",
-    "domain": "https://www.yarinsh.com",
+    "domain": "https://bonim-mikir-lekir.pages.dev",
     "locale": "he_IL",
     "defaultRobots": "index, follow",
     "defaultImage": "/images/og/og-home.webp",
@@ -17,14 +17,14 @@
       "name": "בונים מקיר לקיר",
       "description": "חומרי בניין, צבעים ומוצרי איטום, ייעוץ מקצועי וניהול פרויקטים לקבלנים וללקוחות פרטיים.",
       "foundingDate": "2025",
-      "url": "https://www.yarinsh.com"
+      "url": "https://bonim-mikir-lekir.pages.dev"
     }
   },
   "/": {
     "title": "בונים מקיר לקיר – חומרי בניין, צבעים ואיטום",
     "description": "חומרי בניין, צבעים ומוצרי איטום במחירים הוגנים. משלוחים לאתרי בנייה ולבתים, ייעוץ מקצועי, פגישות ייעוץ עם ירין שמואל והזמנה מהירה בוואטסאפ.",
     "keywords": "חומרי בניין,צבע,איטום,מלט,איטום גגות,צבע לקירות,דבק קרמיקה",
-    "canonical": "https://www.yarinsh.com/",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "בונים מקיר לקיר – חומרי בניין, צבעים ואיטום",
@@ -46,7 +46,7 @@
     "title": "קטלוג מוצרים – בונים מקיר לקיר",
     "description": "מלט, טיט, בלוקים, צבעי פנים וחוץ, איטום גגות וחדרים רטובים, כלי עבודה ועוד.",
     "keywords": "קטלוג חומרי בניין,מחירון צבע,מוצרי איטום,כלי עבודה",
-    "canonical": "https://www.yarinsh.com/products",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/products",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "קטלוג מוצרים – בונים מקיר לקיר",
@@ -65,13 +65,14 @@
     "title": "סל קניות – בונים מקיר לקיר",
     "description": "סל הקניות שלך. שליחת הזמנה מהירה בוואטסאפ.",
     "keywords": "סל קניות",
-    "canonical": "https://www.yarinsh.com/cart",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/cart",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "סל קניות – בונים מקיר לקיר",
     "ogImageWidth": 1200,
     "ogImageHeight": 630,
     "twitterCard": "summary_large_image",
+    "robots": "noindex, follow",
     "sitemap": {
       "changefreq": "yearly",
       "priority": 0.1
@@ -84,7 +85,7 @@
     "title": "אודות – בונים מקיר לקיר",
     "description": "מרכז לחומרי בניין, צבעים ואיטום עם ייעוץ מקצועי ומשלוחים לכל האזור.",
     "keywords": "אודות,חנות חומרי בניין",
-    "canonical": "https://www.yarinsh.com/about",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/about",
     "ogType": "website",
     "ogImage": "/images/og/og-about.webp",
     "ogImageAlt": "אודות – בונים מקיר לקיר",
@@ -103,7 +104,7 @@
     "title": "צור קשר – בונים מקיר לקיר",
     "description": "טלפון, וואטסאפ, כתובת ושעות פעילות. נשמח לתת הצעת מחיר וייעוץ.",
     "keywords": "צור קשר,הצעת מחיר חומרי בניין",
-    "canonical": "https://www.yarinsh.com/contact",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/contact",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "צור קשר – בונים מקיר לקיר",
@@ -123,7 +124,7 @@
     "title": "קביעת פגישת ייעוץ – בונים מקיר לקיר",
     "description": "קביעת פגישת ייעוץ עם ירין שמואל: ניהול פרויקט, וילות, חומרי בניין, צבע ואיטום. בוחרים מועד פנוי ושולחים בקשה לאישור.",
     "keywords": "פגישת ייעוץ,ייעוץ בנייה,ניהול פרויקט,ייעוץ איטום",
-    "canonical": "https://www.yarinsh.com/booking",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/booking",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "קביעת פגישת ייעוץ – בונים מקיר לקיר",
@@ -141,7 +142,7 @@
   "/booking-status": {
     "title": "סטטוס בקשה לפגישה – בונים מקיר לקיר",
     "description": "בדיקת הסטטוס של בקשה לפגישת ייעוץ.",
-    "canonical": "https://www.yarinsh.com/booking-status",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/booking-status",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "סטטוס בקשה לפגישה – בונים מקיר לקיר",
@@ -160,7 +161,7 @@
   "/admin": {
     "title": "ניהול פגישות – בונים מקיר לקיר",
     "description": "אזור ניהול.",
-    "canonical": "https://www.yarinsh.com/admin",
+    "canonical": "https://bonim-mikir-lekir.pages.dev/admin",
     "ogType": "website",
     "ogImage": "/images/og/og-home.webp",
     "ogImageAlt": "ניהול פגישות – בונים מקיר לקיר",
