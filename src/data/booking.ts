@@ -34,6 +34,21 @@ export const services: Service[] = [
     durationMinutes: 90,
     price: 400,
   },
+  {
+    id: 'bill-of-quantities',
+    name: 'הכנת כתב כמויות להצעת מחיר',
+    description: 'פירוט סעיפי העבודה והכמויות מתוך התוכניות, מוכן לשליחה לקבלנים ולספקים לקבלת הצעות מחיר',
+    durationMinutes: 90,
+    // Price depends on the project size, so it is given after the meeting
+    price: null,
+  },
+  {
+    id: 'private-lesson',
+    name: 'שיעור פרטי: ניהול פרויקטים וכתב כמויות',
+    description: 'לימוד אישי איך מנהלים פרויקט בנייה ואיך מכינים כתב כמויות, בקצב שלכם ועל דוגמאות מהפרויקט שלכם',
+    durationMinutes: 90,
+    price: null,
+  },
 ];
 
 export const servicesById = new Map(services.map((s) => [s.id, s]));

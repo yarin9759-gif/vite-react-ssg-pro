@@ -38,6 +38,10 @@ const faq = [
     a: `תתקשרו או תשלחו תמונה של העבודה בוואטסאפ, ונמליץ על החומר והכמות הנכונים. לפרויקט שלם אפשר לקבוע פגישת ייעוץ מסודרת עם ${site.owner}.`,
   },
   {
+    q: 'אפשר לקבל כתב כמויות לפרויקט?',
+    a: `כן. ${site.owner} מכין כתב כמויות מסודר מתוך התוכניות, כדי שתוכלו לקבל הצעות מחיר מקבלנים ומספקים ולהשוות ביניהן. רוצים ללמוד לעשות את זה בעצמכם? יש גם שיעורים פרטיים בניהול פרויקטים ובהכנת כתב כמויות. קובעים פגישה דרך עמוד קביעת הפגישה.`,
+  },
+  {
     q: 'מה שעות הפעילות?',
     a: `${site.hours.map((row) => `${row.days}: ${row.time}`).join(' · ')}. בשבת סגור.`,
   },
@@ -112,7 +116,7 @@ export default function Home() {
       <section className="container mx-auto px-4 pt-16">
         <div className="rounded-2xl bg-white border border-stone-200 p-6 md:p-10 grid gap-8 lg:grid-cols-2 lg:items-center">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-3">פגישת ייעוץ עם {site.owner}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-3">ייעוץ, כתב כמויות ושיעורים פרטיים עם {site.owner}</h2>
             <p className="text-stone-600 mb-6">
               בוחרים נושא, יום ושעה פנויים — והבקשה נשלחת לאישור. תוכלו לעקוב אחרי הסטטוס בכל רגע.
             </p>
